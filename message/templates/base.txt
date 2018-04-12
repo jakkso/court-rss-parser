@@ -1,0 +1,19 @@
+Dear {{ name.title() }},
+
+One or more of your search terms were found in the Court Roll Issue located at:
+
+{{ url }}
+
+The term(s) located are found below:
+
+
+{% for term in search_terms %}
+* {{ term }}
+{% endfor %}
+
+
+Please do not respond to this email as this account's inbox is not monitored
+
+Regards,
+
+MessageBot Team

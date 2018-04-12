@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Court Roll Notice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Court Roll Notification</h3>
+        </div>
+        <div class="panel-body">
+            <b>Dear {{ name.title() }},</b><br>
+               One or more of your search terms were found in the Court Roll Issue located <a href="{{ url|safe }}">here.</a>
+            <div>The term(s) located are found below</div>
+            <ul class="list-group">
+                {% for term in search_terms %}
+                <li class="list-group-item">{{ term }}</li>
+                {% endfor %}
+            </ul>
+            <div>Regards,<br>MessageBot Team</div>
+        </div>
+        <div class="panel-footer">
+            <span style="font-size:10px;">Please do not respond to this email as this account's inbox is not monitored.</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
